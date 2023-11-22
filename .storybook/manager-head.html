@@ -1,0 +1,308 @@
+<script>
+  window.global = window;
+</script>
+
+<link
+  rel="preload"
+  href="static/Inter.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="preload"
+  href="static/AzeretMono.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin="anonymous"
+/>
+
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("static/Inter.ttf") format("truetype");
+    font-weight: 100 1000;
+  }
+  @font-face {
+    font-family: "AzeretMono";
+    src: url("static/AzeretMono.ttf") format("truetype");
+    font-weight: 100 1000;
+  }
+  body,
+  span,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Inter" !important;
+  }
+  pre,
+  pre span {
+    font-family: "AzeretMono" !important;
+  }
+
+  div[role="main"] > div {
+    background-color: #27272a !important;
+  }
+  div[role="main"] > div > div > div > div {
+    background-color: #131316 !important;
+  }
+
+  #storybook-panel-root > div {
+    background-color: #131316 !important;
+  }
+  .tabbutton {
+    color: #a1a1aa !important;
+  }
+  .tabbutton-active {
+    color: #28c3af !important;
+    border-bottom-color: #28c3af !important;
+  }
+  #storybook-preview-iframe {
+    background-color: #131316 !important;
+  }
+
+  /* Table */
+  .docblock-argstable {
+    color: white !important;
+  }
+  .docblock-argstable-body td {
+    background: #131316 !important;
+    border-color: #27272a !important;
+  }
+  .docblock-argstable-body a,
+  .docblock-argstable-body path {
+    color: #5eead4 !important;
+    fill: #5eead4 !important;
+  }
+  .docblock-argstable-head th {
+    color: white !important;
+  }
+  .docblock-argstable-body td > div > div > span,
+  .docblock-argstable-body td:nth-child(3) > div > span,
+  .docblock-argstable-body td > div:last-child > span,
+  .tabbutton > div > div > div,
+  .docblock-argstable-body td code,
+  .sb-anchor code {
+    display: inline-flex !important;
+    min-height: 24px !important;
+    padding: 0px 8px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    flex-shrink: 0 !important;
+    border-radius: 4px !important;
+    border: 1px solid var(--base-700, #27272a) !important;
+    background: var(--base-800, #1a1a1e) !important;
+    color: var(--white, #fff) !important;
+    text-align: center !important;
+    font-family: Inter !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+  }
+  .docblock-argstable-body td button {
+    display: inline-flex;
+    height: 32px;
+    padding: 0px 14px;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid var(--base-700, #27272a);
+    background: var(--base-800, #1a1a1e);
+    color: var(--white, #fff);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    box-shadow: none;
+  }
+  .docblock-argstable-body td button:hover {
+    border: 1px solid var(--base-600, #3f3f46);
+    background: var(--base-700, #27272a);
+  }
+  .docblock-argstable-body td button:active {
+    border: 1px solid var(--base-700, #27272a);
+    background: var(--base-800, #1a1a1e);
+  }
+  .docblock-argstable-body td button:focus {
+    box-shadow: none;
+  }
+  .docblock-argstable-body input:not([type="radio"]):not([type="checkbox"]),
+  .docblock-argstable-body textarea,
+  .search-field input,
+  .docblock-argstable-body select {
+    display: flex;
+    min-height: 32px;
+    padding: 0px 8px 0px 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-radius: 4px;
+    border: 1px solid var(--base-700, #27272a);
+    background: var(--background, #131316);
+    color: var(--white, #fff);
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .docblock-argstable-body
+    input:not([type="radio"]):not([type="checkbox"]):hover,
+  .docblock-argstable-body textarea:hover,
+  .search-field input:hover,
+  .docblock-argstable-body select:hover {
+    border: 1px solid var(--base-700, #27272a);
+    background: var(--base-900, #161618);
+  }
+  .docblock-argstable-body
+    input:not([type="radio"]):not([type="checkbox"]):focus,
+  .docblock-argstable-body textarea:focus,
+  .search-field input:focus,
+  .docblock-argstable-body select:focus {
+    border: 1px solid var(--primary-200, #5eead4);
+    background: var(--background, #131316);
+    box-shadow: 0px 0px 0px 4px #0f3e3a;
+  }
+  .rejt-name {
+    color: #28c3af !important;
+  }
+  .rejt-value-node:hover > .rejt-value {
+    border: 1px solid var(--base-700, #27272a) !important;
+    background: var(--base-900, #161618) !important;
+  }
+  .docblock-argstable-body input[type="radio"] {
+    all: unset;
+    margin-right: 6px;
+    display: inline;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    border: 1px solid var(--base-400, #71717a);
+    background: var(--base-800, #1a1a1e);
+    display: grid;
+    place-content: center;
+  }
+  .docblock-argstable-body input[type="radio"]:checked {
+    border: 1px solid var(--primary-300, #28c3af);
+    background: var(--primary-800, #0f3e3a);
+  }
+  .docblock-argstable-body input[type="radio"]:checked::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50px;
+    background: var(--primary-300, #28c3af);
+  }
+  .docblock-argstable-body input[type="radio"]:hover {
+    border: 1px solid var(--base-400, #71717a);
+    background: var(--base-700, #27272a);
+    box-shadow: 0px 0px 0px 4px #27272a;
+  }
+  .docblock-argstable-body input[type="radio"]:checked:hover {
+    border: 1px solid var(--primary-300, #28c3af);
+    background: var(--primary-700, #115e59);
+    box-shadow: 0px 0px 0px 4px #115e59;
+  }
+  .docblock-argstable-body input[type="radio"]:active {
+    border: 1px solid var(--base-700, #27272a);
+    background: var(--base-800, #1a1a1e);
+  }
+  .docblock-argstable-body input[type="radio"]:checked:active {
+    border: 1px solid var(--primary-500, #0d9488);
+    background: var(--primary-900, #0a2927);
+  }
+  .docblock-argstable-body
+    input[type="checkbox"]:not(:checked)
+    ~ span:first-of-type,
+  .docblock-argstable-body input[type="checkbox"]:checked ~ span:last-of-type {
+    color: white !important;
+    background: #131316 !important;
+    box-shadow: none !important;
+  }
+  .docblock-argstable-body label:has(input[type="checkbox"]) {
+    background: #27272a !important;
+  }
+  .docblock-argstable-body label:has(input[type="checkbox"]) span {
+    color: white !important;
+  }
+  input[type="checkbox"]:focus {
+    box-shadow: none !important;
+  }
+
+  /* Navbar */
+  .sidebar-container {
+    background-color: #131316 !important;
+    border-right: 1px solid #27272a !important;
+  }
+  .sidebar-subheading {
+    color: white !important;
+  }
+  .sidebar-item {
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 600;
+  }
+  .sidebar-item a {
+    font-size: 14px !important;
+    font-weight: 600;
+  }
+  .sidebar-item svg {
+    color: white !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .sidebar-item:hover {
+    background-color: #1a1a1e !important;
+  }
+  .sidebar-item:focus {
+    background: none !important;
+  }
+  .sidebar-item[data-selected="true"] {
+    background-color: #0a2927 !important;
+    color: #28c3af !important;
+  }
+  .sidebar-item[data-selected="true"] svg {
+    color: #28c3af !important;
+  }
+  .search-result-item {
+    color: white !important;
+  }
+  .search-result-item:hover {
+    background-color: #1a1a1e !important;
+  }
+  .search-result-item:focus {
+    background: none !important;
+  }
+  .search-result-item svg {
+    color: white !important;
+  }
+  .search-result-item span {
+    color: #f4f4f5 !important;
+  }
+  .search-field svg {
+    display: none !important;
+  }
+  div[data-popper-interactive] {
+    background: #1a1a1e !important;
+    border: 1px solid #27272a !important;
+  }
+  div[data-popper-interactive] span {
+    color: white !important;
+  }
+  div[data-popper-interactive] path {
+    fill: #28c3af !important;
+  }
+  div[data-popper-interactive] a:hover {
+    background: #131316 !important;
+  }
+</style>
