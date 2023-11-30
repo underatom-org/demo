@@ -136,6 +136,11 @@ export const Sizes: Story = {
       </TextIconButton>
     </div>
   ),
+  argTypes: {
+    size: {
+      control: false,
+    },
+  },
 };
 
 /** You can group buttons using the `attachment` property. */

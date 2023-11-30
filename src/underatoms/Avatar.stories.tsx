@@ -30,12 +30,12 @@ const meta: Meta<typeof Avatar> = {
       AvatarImg: {
         atom: AvatarImage,
         description: "The image of the avatar",
-        include: ["asChild", "onLoadingStatusChange"],
+        include: ["onLoadingStatusChange"],
       },
       AvatarFallback: {
         atom: AvatarFallback,
         description: "An element that renders when the image hasn't loaded.",
-        include: ["asChild", "delayMs", "children"],
+        include: ["delayMs", "children"],
       },
     },
     include: ["children"],

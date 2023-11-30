@@ -101,6 +101,7 @@ export const getCheckboxClasses = ({
         md: "text-b-md",
         lg: "text-b-lg",
       })}
+      data-[disabled=true]:text-base-500
     `,
     descriptionClass: `
       font-regular
@@ -111,6 +112,7 @@ export const getCheckboxClasses = ({
         lg: "text-b-lg",
       })}
       data-[invalid=true]:text-error-300
+      data-[disabled=true]:text-base-500
     `,
   };
 };

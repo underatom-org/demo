@@ -56,10 +56,15 @@ export const CheckboxFieldLabel = ({ children }: CheckboxFieldLabelProps) => {
   const {
     classes: { labelClass },
     id,
+    radixProps,
   } = useCheckboxInternalContext();
 
   return (
-    <label className={labelClass} htmlFor={id}>
+    <label
+      data-disabled={radixProps.disabled}
+      className={labelClass}
+      htmlFor={id}
+    >
       {children}
     </label>
   );
@@ -75,10 +80,15 @@ export const CheckboxFieldDescription = ({
   const {
     classes: { descriptionClass },
     isInvalid,
+    radixProps,
   } = useCheckboxInternalContext();
 
   return (
-    <div data-invalid={isInvalid} className={descriptionClass}>
+    <div
+      data-invalid={isInvalid}
+      data-disabled={radixProps.disabled}
+      className={descriptionClass}
+    >
       {children}
     </div>
   );
