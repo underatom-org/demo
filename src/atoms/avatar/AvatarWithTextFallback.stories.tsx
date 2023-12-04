@@ -91,4 +91,9 @@ export const KitchenSink: Story = {
       {getKitchenSink([Default, Sizes])}
     </div>
   ),
+  argTypes: {
+    imageProps: {
+      control: false,
+    },
+  },
 };

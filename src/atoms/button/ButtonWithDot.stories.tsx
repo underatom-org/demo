@@ -65,6 +65,11 @@ export const Sizes: Story = {
       </ButtonWithDot>
     </div>
   ),
+  argTypes: {
+    size: {
+      control: false,
+    },
+  },
 };
 
 /** You can group buttons using the `attachment` property. */

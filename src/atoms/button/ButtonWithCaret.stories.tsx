@@ -72,6 +72,11 @@ export const Variants: Story = {
       </ButtonWithCaret>
     </div>
   ),
+  argTypes: {
+    variant: {
+      control: false,
+    },
+  },
 };
 
 /** `Button` component in a disabled state. */
@@ -114,6 +119,11 @@ export const Sizes: Story = {
       </ButtonWithCaret>
     </div>
   ),
+  argTypes: {
+    size: {
+      control: false,
+    },
+  },
 };
 
 /** You can group buttons using the `attachment` property. */

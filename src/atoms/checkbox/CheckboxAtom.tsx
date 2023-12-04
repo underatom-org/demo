@@ -40,17 +40,9 @@ export function CheckboxAtom({
             <CheckboxIndicator>
               {(iconClass) =>
                 checked === "indeterminate" ? (
-                  <Minus
-                    data-testid="indeterminate-icon"
-                    className={iconClass}
-                    weight="bold"
-                  />
+                  <Minus className={iconClass} weight="bold" />
                 ) : (
-                  <Check
-                    data-testid="check-icon"
-                    className={iconClass}
-                    weight="bold"
-                  />
+                  <Check className={iconClass} weight="bold" />
                 )
               }
             </CheckboxIndicator>
